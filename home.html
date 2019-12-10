@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 
-<select id="dropdown">
+<div class="container-md">
+    <select id="dropdown">
+        <optgroup label = "选一种狗狗~" style="background-color:powderblue;">
 
-</select> <br>
 
-    <button onClick="getRandomchihuahuaImage()">获得一个吉娃娃狗狗</button><br />
-    <br />
+        </optgroup>
+    </select> <br>
+    <button onClick="getRandomImage()" id="myButton" class="btn btn-success ">获得一个吉娃娃狗狗</button><br />
+</div>
+
+
+<div class="container-md">
+
+
     <img id="dogImage" src="https://dog.ceo/img/dog-api-logo.svg">
-
+</div>
 <!--    Jquery-->
     <script src="jquery-3.4.1.min.js"></script>
 

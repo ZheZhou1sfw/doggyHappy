@@ -1,5 +1,6 @@
 // function to get a random image
 
+// prepopulate the dropdown list
 $.getJSON("https://dog.ceo/api/breeds/list/all", function(result) {
     var $dropdown = $("#dropdown");
     console.log(result.message);
@@ -8,12 +9,27 @@ $.getJSON("https://dog.ceo/api/breeds/list/all", function(result) {
             continue;
         }
         console.log(key);
-        $dropdown.append($("<option />").val(key).text(key));
+        if (key === 'chihuahua') {
+            $dropdown.append($("<option />").val(key).text("吉娃娃"));
+        } else if (key === 'shiba') {
+            $dropdown.append($("<option />").val(key).text("柴犬"));
+        } else if (key === 'labrador') {
+            $dropdown.append($("<option />").val(key).text("拉布拉多"));
+        } else {
+            $dropdown.append($("<option />").val(key).text(key));
+        }
     };
     $dropdown.val('chihuahua');
 });
 
-function getRandomchihuahuaImage()
+// on select dropdown, update button text
+$("#dropdown").change(function() {
+    var text = "获得一个" + $("#dropdown option:selected").text() + "狗狗";
+    //$('#myButton').innerHTML = text;
+    $('#myButton').html(text);
+});
+
+function getRandomImage()
 {
     // get the data from the server
     console.log($("#dropdown").val());
